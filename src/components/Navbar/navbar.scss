@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.navbar {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid $border;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__search {
+    display: flex;
+    width: 400px;
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid $border;
+      border-radius: 8px 0 0 8px;
+    }
+
+    button {
+      padding: 0 16px;
+      background: $accent;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+  }
+}
