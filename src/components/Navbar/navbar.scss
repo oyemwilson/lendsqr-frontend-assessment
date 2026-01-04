@@ -3,21 +3,52 @@
 .navbar {
   height: 80px;
   background: white;
-  border-bottom: 1px solid $border;
   padding: 0 32px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 10;
+  
+
+  &__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 140px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 30px;
+      width: auto;
+      display: block;
+      transform: translateX(-5px);
+    }
+  }
 
   &__search {
     display: flex;
-    width: 400px;
+    width: 340px;
 
     input {
       flex: 1;
       padding: 12px;
       border: 1px solid $border;
       border-radius: 8px 0 0 8px;
+      font-size: 14px;
     }
 
     button {
@@ -27,7 +58,27 @@
       border-radius: 0 8px 8px 0;
       color: white;
       cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
+
+  &__search-icon {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+
+    svg {
+      stroke: $text-light;
+    }
+  }
+
+  &__mobile-search {
+    display: none;
   }
 
   &__right {
@@ -45,6 +96,61 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    padding: 0 16px;
+
+    &__hamburger {
+      display: block;
+    }
+
+    &__left {
+      gap: 16px;
+    }
+
+    &__search {
+      display: none;
+    }
+
+    &__search-icon {
+      display: block;
+    }
+
+    &__logo {
+      margin-left: 8px;
+    }
+
+    &__mobile-search {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: white;
+      padding: 0 16px;
+      align-items: center;
+      gap: 12px;
+      z-index: 20;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid $border;
+        border-radius: 8px;
+      }
+
+      button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
     }
   }
 }
