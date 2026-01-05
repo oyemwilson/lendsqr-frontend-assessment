@@ -7,7 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+ border-bottom: 1px solid rgba(33, 63, 125, 0.06);
+box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   position: relative;
   z-index: 10;
   
@@ -38,10 +39,16 @@
       transform: translateX(-5px);
     }
   }
+      &__doc{
+      text-decoration: underline;
+
+      
+    }
 
   &__search {
     display: flex;
-    width: 340px;
+    width: 400px;
+    height: 40px;
 
     input {
       flex: 1;
@@ -52,7 +59,7 @@
     }
 
     button {
-      padding: 0 16px;
+      padding: 0 22px;
       background: $accent;
       border: none;
       border-radius: 0 8px 8px 0;
@@ -87,6 +94,11 @@
     gap: 24px;
   }
 
+
+  &__bell{
+    padding: 0 20px;
+  }
+
   &__profile {
     display: flex;
     align-items: center;
@@ -98,15 +110,30 @@
       border-radius: 50%;
       object-fit: cover;
     }
+
+  }
+  .navbar__profile > svg:first-child,
+.navbar__profile > img:first-child {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  @media (max-width: 968px) {
+    &__hamburger {
+      display: block;
+    }
   }
 
   /* Responsive */
   @media (max-width: 768px) {
     padding: 0 16px;
 
-    &__hamburger {
-      display: block;
-    }
+
 
     &__left {
       gap: 16px;
@@ -119,6 +146,25 @@
     &__search-icon {
       display: block;
     }
+
+      &__doc {
+    display: none;
+  }
+    &__doc {
+    display: none;
+  }
+
+  &__profile span {
+    display: none;
+  }
+
+  &__profile svg:last-child {
+    display: none;
+  }
+
+  &__right {
+    gap: 12px;
+  }
 
     &__logo {
       margin-left: 8px;
@@ -153,4 +199,34 @@
       }
     }
   }
+  @media (min-width: 769px) and (max-width: 1100px) {
+  .navbar {
+    padding: 0 20px;
+
+    &__left {
+      gap: 32px; // reduce from 140px
+    }
+
+    &__search {
+      width: 260px; // shrink search bar
+    }
+
+    &__doc {
+      display: none; // still hide Docs on tablet
+    }
+
+    &__profile span {
+      display: none; // hide name to save space
+    }
+
+    &__profile svg:last-child {
+      display: none; // hide dropdown chevron
+    }
+
+    &__right {
+      gap: 16px;
+    }
+  }
+}
+
 }

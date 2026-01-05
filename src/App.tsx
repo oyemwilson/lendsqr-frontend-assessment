@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/login" element={<Login />} />
 <Route
-  path="/users"
+  path="/dashboard"
   element={
     <Layout>
       <Users />
@@ -26,14 +26,14 @@ function App() {
     </Layout>
   }
 />
-<Route
+{/* <Route
   path="/dashboard"
   element={
     <Layout>
       <Dashboard />
     </Layout>
   }
-/>
+/> */}
 
     </Routes>
   );

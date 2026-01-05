@@ -1,17 +1,18 @@
+@import "../../styles/variables";
 .sidebar {
   width: 260px;
   background: white;
-  box-shadow: 1px 0 0 rgba(229, 231, 235, 0.8);
   padding: 24px 0;
-  font-size: 14px;
-  color: #545f7d;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  transition: transform 0.3s ease;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   z-index: 1000;
+  transition: transform 0.3s ease;
 
-  /* Mobile hidden by default */
-  @media (max-width: 768px) {
+  /* Desktop */
+  position: relative;
+  transform: none;
+
+  @media (max-width: 968px) {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,20 +20,24 @@
     transform: translateX(-100%);
   }
 
-  &--open {
-    transform: translateX(0);
+  &__open {
+    @media (max-width: 968px) {
+      transform: translateX(0);
+    }
   }
 
-  &__overlay {
-    display: none;
 
-    @media (max-width: 768px) {
-      display: block;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 999;
-    }
+  &__overlay {
+   display: none;
+
+  @media (max-width: 968px) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 999;
+  }
+
   }
 
   &__org {
@@ -72,7 +77,7 @@
       background: rgba(57, 205, 204, 0.1);
       border-left: 4px solid #39cdcc;
       padding-left: 20px;
-      color: #39cdcc;
+      color: $primary;
 
       .sidebar__icon {
         color: #39cdcc;
@@ -100,3 +105,36 @@
     color: currentColor;
   }
 }
+.sidebar__bottom {
+  padding: 16px 0;
+}
+
+.sidebar__divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 24px;
+}
+
+.sidebar__logout {
+  font-weight: 500;
+  color: #213F7D;
+opacity: 1 !important;
+  &:hover {
+    background: rgba(214, 69, 69, 0.08);
+  }
+}
+
+.sidebar__version {
+  font-size: 12px;
+  color: #213F7D;
+opacity: 1 !important;
+  margin-top: 8px;
+  padding-left: 24px;
+}
+.sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+}
+/* === Sidebar overlay fix === */
+
+

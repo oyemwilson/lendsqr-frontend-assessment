@@ -12,7 +12,7 @@ export type UserFilters = {
 };
 
 const DEFAULT_FILTERS: UserFilters = {
-  org: "",
+  organization: "",
   username: "",
   email: "",
   date: "",
@@ -20,9 +20,7 @@ const DEFAULT_FILTERS: UserFilters = {
   status: "",
 };
 
-const ITEMS_PER_PAGE = 20;
-
-export const useUsers = () => {
+export const useUsers = (itemsPerPage: number) => {
   const [allUsers, setAllUsers] = useState<User[]>([]);
   const [filters, setFilters] = useState<UserFilters>(DEFAULT_FILTERS);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,7 +37,7 @@ export const useUsers = () => {
   const filteredUsers = useMemo(() => {
     return allUsers.filter(user => {
       return (
-        (!filters.org || user.org === filters.org) &&
+        (!filters.org || user.organization === filters.org) &&
         (!filters.username ||
           user.fullName.toLowerCase().includes(filters.username.toLowerCase())) &&
         (!filters.email ||
@@ -51,12 +49,12 @@ export const useUsers = () => {
   }, [allUsers, filters]);
 
   // Pagination
-  const totalPages = Math.ceil(filteredUsers.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
 
   const currentUsers = useMemo(() => {
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    return filteredUsers.slice(start, start + ITEMS_PER_PAGE);
-  }, [filteredUsers, currentPage]);
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredUsers.slice(start, start + itemsPerPage);
+  }, [filteredUsers, currentPage, itemsPerPage]);
 
   // Handlers
   const resetFilters = () => {

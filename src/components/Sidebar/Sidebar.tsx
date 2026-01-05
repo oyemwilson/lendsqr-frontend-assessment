@@ -19,6 +19,9 @@ import ChartIcon from "../../assets/chart.svg?react";
 import SlidersIcon from "../../assets/sliders.svg?react";
 import HumidityIcon from "../../assets/humidity.svg?react";
 import ClipboardIcon from "../../assets/clipboard.svg?react";
+import ArrowBottomIcon from "../../assets/arrowbottom.svg?react";
+import SystemIcon from "../../assets/system.svg?react";
+import LogoutIcon from "../../assets/logout.svg?react";
 
 type SidebarProps = {
   open: boolean;
@@ -28,10 +31,11 @@ type SidebarProps = {
 const Sidebar = ({ open, onClose }: SidebarProps) => {
   return (
     <>
-<aside className={`sidebar ${open ? "sidebar--open" : ""}`}>
+<aside className={`sidebar ${open ? "sidebar__open" : ""}`}>
       <div className="sidebar__org">
       <BriefcaseIcon className="sidebar__icon" />
         <span>Switch Organization</span>
+        <ArrowBottomIcon />
       </div>
 
       <nav className="sidebar__nav">
@@ -126,8 +130,19 @@ const Sidebar = ({ open, onClose }: SidebarProps) => {
           <ClipboardIcon className="sidebar__icon" />
           <span>Audit Logs</span>
         </a>
+            <a className="sidebar__link">
+      <SystemIcon className="sidebar__icon" />
+      <span>System Messages</span>
+    </a>
       </nav>
-
+<div className="sidebar__bottom">
+    <div className="sidebar__divider" />
+    <a className="sidebar__link sidebar__logout">
+      <LogoutIcon />
+      <span>Logout</span>
+    </a>
+    <p className="sidebar__version">v1.2.0</p>
+  </div>
     </aside>
  {open && <div className="sidebar__overlay" onClick={onClose} />}
     </>

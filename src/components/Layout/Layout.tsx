@@ -6,6 +6,7 @@ import { useState } from "react";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+
   return (
     <>
       <div className="layout">

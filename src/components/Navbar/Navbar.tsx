@@ -2,15 +2,28 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import "./Navbar.scss";
 import Logo from "../../assets/logo.svg?react";
+import DropdownIcon from "../../assets/dropdown.svg?react";
+import UserImageIcon from "../../assets/userimage.svg?react";
+import NotificationIcon from "../../assets/notification.svg?react";
 
-const Navbar = () => {
+type NavbarProps = {
+  onToggleSidebar: () => void;
+};
+
+const Navbar = ({ onToggleSidebar }: NavbarProps) => {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   return (
     <>
       <header className="navbar">
         <div className="navbar__left">
-          <button className="navbar__hamburger">☰</button>
+          <button
+            className="navbar__hamburger"
+            onClick={onToggleSidebar}
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
 
           <div className="navbar__logo">
             <Logo />
@@ -28,16 +41,19 @@ const Navbar = () => {
           <button
             className="navbar__search-icon"
             onClick={() => setShowMobileSearch(true)}
-            aria-label="Open search"
           >
             <Search size={22} />
           </button>
 
-          <span className="navbar__bell">🔔</span>
+          <span className="navbar__doc">Docs</span>
+          <span className="navbar__bell">
+            <NotificationIcon />
+          </span>
 
           <div className="navbar__profile">
-            <img src="https://i.pravatar.cc/40" alt="avatar" />
+            <UserImageIcon />
             <span>Adedeji</span>
+            <DropdownIcon />
           </div>
         </div>
       </header>
