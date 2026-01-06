@@ -1,25 +1,17 @@
-It’s a very solid start, but you **must** update the placeholders (like `<your-name>`) before you push it to GitHub. If a recruiter sees placeholders in a README, it looks like it was generated and not reviewed.
-
-I’ve cleaned up the formatting, fixed the broken code blocks, and inserted your **actual links** and **correct name** based on your previous message.
-
----
-
-### 📝 The Optimized README.md
-
 ```md
 # Lendsqr Frontend Assessment
 
 This project is a high-fidelity frontend implementation of the Lendsqr Admin Dashboard. 
 It demonstrates a professional approach to building scalable web applications using React, TypeScript, and modern frontend best practices.
 
----
+***
 
 ## 🚀 Live Demo
 
 **Hosted App:** [https://lendsqr-fe-test-3cm5.onrender.com/](https://lendsqr-fe-test-3cm5.onrender.com/)  
 **Repository:** [https://github.com/oyemwilson/lendsqr-fe-test](https://github.com/oyemwilson/lendsqr-fe-test)
 
----
+***
 
 ## 🛠 Tech Stack
 
@@ -32,7 +24,7 @@ It demonstrates a professional approach to building scalable web applications us
 | **Vitest + RTL** | Unit and integration testing |
 | **Render** | Automated CI/CD and static site hosting |
 
----
+***
 
 ## 📁 Project Structure
 
@@ -98,11 +90,12 @@ The application uses **Vitest** and **React Testing Library** to ensure reliabil
 
 ---
 
-## ⚠️ Known Limitations & Challenges
+## ⚠️ Challenges & Resolutions
 
-* **Data Persistence:** As this is a frontend-only task, changes to user data are not persisted to a database.
-* **Case Sensitivity:** Handled a challenge regarding Linux/Windows file naming discrepancies during the deployment phase.
-* **Sass Migration:** Currently using `@import` for legacy compatibility; a move to `@use` is planned for the next refactor.
+* **Cross-Platform Case Sensitivity:** Encountered import errors during the Linux-based build process on Render. Resolved by enforcing a strict kebab-case naming convention for all files.
+* **Bundle Size Optimization:** Analyzed build reports to manage large mock datasets; implemented code-splitting for non-critical routes to optimize initial load time.
+* **Sass Migration:** Proactively restructured the style architecture to be compatible with modern `@use` and `@forward` modules for future-proofing.
+* **Data Persistence:** As this is a frontend-only task, changes to user data are handled via state and are not persisted to a database.
 
 ---
 
@@ -112,6 +105,6 @@ The application uses **Vitest** and **React Testing Library** to ensure reliabil
 
 **Role:** Frontend Engineer
 
-**Portfolio:** [oyemwilson.onrender.com](https://oyemwilson.onrender.com/)
+**Portfolio:** [oyemwilson.com](https://oyemwilson.com/)
 
 **Purpose:** Lendsqr Frontend Engineering Assessment
