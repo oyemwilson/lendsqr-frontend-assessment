@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { getUser } from "../../utils/storage";
-import "./UserDetails.scss";
+import "./userDetails.scss";
 import AvatarIcon from "../../assets/avatar.svg?react";
 import ArrowBackIcon from "../../assets/backarrow.svg?react";
 
