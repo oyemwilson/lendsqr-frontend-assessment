@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
-import "./Navbar.scss";
+import "./navbar.scss";
 import Logo from "../../assets/logo.svg?react";
 import DropdownIcon from "../../assets/dropdown.svg?react";
 import UserImageIcon from "../../assets/userimage.svg?react";
