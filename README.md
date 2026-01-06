@@ -4,14 +4,12 @@
 This project is a high-fidelity frontend implementation of the Lendsqr Admin Dashboard. 
 It demonstrates a professional approach to building scalable web applications using React, TypeScript, and modern frontend best practices.
 
-***
 
 ## 🚀 Live Demo
 
 **Hosted App:** [https://lendsqr-fe-test-3cm5.onrender.com/](https://lendsqr-fe-test-3cm5.onrender.com/)  
 **Repository:** [https://github.com/oyemwilson/lendsqr-fe-test](https://github.com/oyemwilson/lendsqr-fe-test)
 
-***
 
 ## 🛠 Tech Stack
 
@@ -24,11 +22,10 @@ It demonstrates a professional approach to building scalable web applications us
 | **Vitest + RTL** | Unit and integration testing |
 | **Render** | Automated CI/CD and static site hosting |
 
-***
 
 ## 📁 Project Structure
 
-```text
+```
 src/
  ├── api/        # Mock API and data fetching logic
  ├── components/ # Reusable UI components (Atoms, Molecules)
@@ -108,5 +105,3 @@ The application uses **Vitest** and **React Testing Library** to ensure reliabil
 **Portfolio:** [oyemwilson.com](https://oyemwilson.com/)
 
 **Purpose:** Lendsqr Frontend Engineering Assessment
-
-```
