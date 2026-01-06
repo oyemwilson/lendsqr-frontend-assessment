@@ -6,6 +6,7 @@ export interface User {
   bvn: string;
   gender: string;
   maritalStatus: string;
+  dateJoined: string;
   children: string;
   residence: string;
   education: {

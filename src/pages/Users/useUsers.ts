@@ -3,12 +3,12 @@ import { fetchUsers } from "../../api/users.api";
 import type { User } from "../../types/user";
 
 export type UserFilters = {
-  org: string;
   username: string;
   email: string;
   date: string;
   phone: string;
   status: string;
+  organization: string;
 };
 
 const DEFAULT_FILTERS: UserFilters = {
@@ -26,18 +26,16 @@ export const useUsers = (itemsPerPage: number) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  // Fetch users
   useEffect(() => {
     fetchUsers()
       .then(data => setAllUsers(data))
       .finally(() => setLoading(false));
   }, []);
 
-  // Apply filters
   const filteredUsers = useMemo(() => {
     return allUsers.filter(user => {
       return (
-        (!filters.org || user.organization === filters.org) &&
+        (!filters.organization || user.organization === filters.organization) &&
         (!filters.username ||
           user.fullName.toLowerCase().includes(filters.username.toLowerCase())) &&
         (!filters.email ||
@@ -48,7 +46,6 @@ export const useUsers = (itemsPerPage: number) => {
     });
   }, [allUsers, filters]);
 
-  // Pagination
   const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
 
   const currentUsers = useMemo(() => {
@@ -56,7 +53,6 @@ export const useUsers = (itemsPerPage: number) => {
     return filteredUsers.slice(start, start + itemsPerPage);
   }, [filteredUsers, currentPage, itemsPerPage]);
 
-  // Handlers
   const resetFilters = () => {
     setFilters(DEFAULT_FILTERS);
     setCurrentPage(1);
