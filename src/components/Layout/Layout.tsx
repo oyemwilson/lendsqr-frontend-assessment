@@ -1,6 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
-import "./Layout.scss";
+import "./layout.scss";
 import { useState } from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
